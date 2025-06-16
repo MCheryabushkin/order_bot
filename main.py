@@ -4,6 +4,10 @@ from config import BOT_TOKEN, CHAT_ID
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Приложение Flask запущено и работает!"
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.form
